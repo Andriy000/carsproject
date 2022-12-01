@@ -10,7 +10,7 @@ body {
 }
 .navbar{
   width: 100%;
-  height: 75px;
+  height: 100px;
   box-shadow: 0 4px 10px;
 background-color: yellow;}
 
@@ -69,4 +69,44 @@ background-color: yellow;}
 .navbar-brand:hover{
 	color: coral;
 	opacity: 1;
+}
+
+.products-container{
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(280px,2fr));
+width: 80%;
+max-width: 1000px;
+margin: auto;
+grid-gap: 20px;
+}
+.products-element{
+margin-top: 1cm;
+display: flex;
+flex-direction:column;
+padding: 40px 10px;
+background-color: lightslategrey;
+border-radius: 10px;
+box-shadow: inset;
+}
+.products-element_img{
+	width: 90%;
+	height: 270px;
+	padding-bottom: 1cm;
+border-radius: 10px;
+}
+.products-element_btn:hover{
+	border-radius: 10px;
+	color:coral;
+	font-weight:bolder;
+}
+.products-element_btn{
+	border: 2px solid;
+	font-size: larger;
+}
+.products-element_brands:hover{
+	transition-duration: 1s;
+	font-weight: bold;
+}
+.products-element_videos.video{
+	color:aqua;
 }
