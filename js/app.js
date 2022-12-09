@@ -1,24 +1,47 @@
-const card =document.getElementById("carproduct");
-let carCatalogCard ='';
-cars.forEach(({id,brand,model,color,price,image,year,country,power,video})=>{
-  carCatalogCard +=`
-    <ul class="products-element">
-      <img class="products-element_img" src="${image}"/>
-      <p>Brand:<span class="products-element_brands"> ${brand},</span></p>
-      <p>Model:<span class="products-element_models"> ${model},<span/></p>
-      <p>Color:<span class="products-element_colors"> ${color},<span/></p>
-      <p>Price:<span class="products-element_prices"> ${price.toLocaleString()}USD,<span/></p>
-      <p>Year of issue: <span class="products-element_years"> ${year},<span/></p>
-      <p>Country:<span class="products-element_countries"> ${country},<span/></p>
-      <p>Power: <span class="products-element_powers">${power},<span/></p>
-      <p>Video rewiev:<span class="products-element_videos"> <a href="${video}">video</a></span></p>
-      <button class="products-element_btn">Позвонити продавцю 📞</button>
-    </ul> `;
-});
-const HTMLdata =`
-<ul class ="products-container">
-${carCatalogCard}
-</ul>
-`;
+const card = document.getElementById("section");
 
-card.innerHTML=HTMLdata;
+for (let key in carsData ) {
+  let uls = document.createElement("ul");
+  uls.className = "products-container"
+  let ul =document.createElement('ul');
+  ul.className ="products-element";
+  let list = document.createElement('li');
+  let branData = document.createElement("div");
+  branData.className ="products-element_brands";
+  let modelData = document.createElement("div");
+  let countryData = document.createElement("div");
+  let colorData =document.createElement("div");
+  let yearData = document.createElement("div");
+  let powerData = document.createElement("div");
+  let priceData = document.createElement("div");
+  let button = document.createElement("button")
+  button.className = "products-element_btn";
+  let photo = document.createElement("img");
+  photo.className ="products-element_img";
+  
+
+  
+  photo.src = carsData[key].image;
+  branData.innerHTML = `Brand: ${carsData[key].brand}`;
+  modelData.innerHTML =`model: ${carsData[key].model}`;
+  countryData.innerHTML = `country: ${carsData[key].country}`;
+  colorData.innerHTML = `color: ${carsData[key].color }`;
+  yearData.innerHTML = `year: ${carsData[key].year }`;
+  powerData.innerHTML =`power:  ${carsData[key].power}`;
+  priceData.innerHTML =`price: ${carsData[key].price} `;
+  button.innerHTML = `подзвонити продавцю`
+
+
+  section.appendChild(uls);
+  uls.appendChild(ul);
+  ul.appendChild(list);
+  list.appendChild(photo);
+  list.appendChild(branData);
+  list.appendChild(modelData);
+  list.appendChild(priceData);
+  list.appendChild(yearData);
+  list.appendChild(countryData);
+  list.appendChild(powerData);
+  list.appendChild(colorData);
+  ul.appendChild(button);
+};
